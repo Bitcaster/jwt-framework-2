@@ -34,18 +34,10 @@ class JWEDecrypter
         private readonly null|CompressionMethodManager $compressionMethodManager = null
     ) {
         if ($compressionMethodManager !== null) {
-            trigger_deprecation(
-                'web-token/jwt-library',
-                '3.3.0',
-                'The parameter "$compressionMethodManager" is deprecated and will be removed in 4.0.0. Compression is not recommended for JWE. Please set "null" instead.'
-            );
+
         }
         if ($contentEncryptionAlgorithmManager !== null) {
-            trigger_deprecation(
-                'web-token/jwt-library',
-                '3.3.0',
-                'The parameter "$contentEncryptionAlgorithmManager" is deprecated and will be removed in 4.0.0. Please set all algorithms in the first argument and set "null" instead.'
-            );
+
             $this->keyEncryptionAlgorithmManager = $algorithmManager;
             $this->contentEncryptionAlgorithmManager = $contentEncryptionAlgorithmManager;
         } else {
